@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+* {
+    font-family: "Didact Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --PriColour: #bdb5d5;
+    --SecColour: #e6e6fa;
+    --HoverColour: #da70d6;
+    --Hover1Colour: #db7cd8;
+    --black-bg: #bdb5d5b7;
+    --blue: cyan;
+}
+
+body {
+    height: 100%;
+    background-color: var(--SecColour);
+    color: black;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--PriColour);
+    position: relative;
+}
+
+.logo {
+    width: 200px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-link img {
+    display: block;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--Hover1Colour);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--HoverColour);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.btn {
+    padding: 15px 25px;
+    background-color: #f7f6fa;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background-color: var(--PriColour);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Menu Icon */
+#menu-btn {
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .navbar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    .header {
+        padding: 8px 15px;
+    }
+
+    .logo {
+        width: 170px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--PriColour);
+        z-index: 1;
+    }
+
+    .navbar.active {
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        padding: 15px;
+        text-align: center;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 130px;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+}
+
+/* Background Video Setup */
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Text Overlay */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+    max-width: 600px;
+}
+
+.text-overlay h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+    font-family: "Marcellus", serif;
+    color: #301934;
+}
+
+.text-overlay p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #301934;
+}
+
+.text-overlay button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.text-overlay button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Video Thumbnails */
+.video-thumbnails {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbnail {
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.thumbnail p {
+    color: white;
+    margin-top: 5px;
+}
+
+/* Small Devices (max-width 480px) */
+@media (max-width: 480px) {
+    .text-overlay h1 {
+        font-size: 36px;
+    }
+
+    .text-overlay p {
+        font-size: 14px;
+    }
+
+    .video-thumbnails {
+        right: 10px;
+    }
+
+    .thumbnail img {
+        width: 120px;
+        height: 80px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+
+
+
+/* Second Page Start */
+.SecondPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align sections at the top */
+    height: 100vh;
+    /* Full viewport height */
+    padding: 0 8%;
+    /* Add left and right padding */
+    box-sizing: border-box;
+    position: relative;
+    /* Ensure relative positioning */
+    background-image: url('assets/SeocndPAGEb.png');
+    /* Set your background image path here */
+    background-size: cover;
+    /* Ensure the background image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+}
+
+.photo-section,
+.text-section,
+.form-section {
+    width: 33.33%;
+    /* Equal width for all sections */
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: flex-start;
+    /* Align content at the top */
+}
+
+.photo-section {
+    display: flex;
+    justify-content: center;
+    /* Center form horizontally */
+    align-items: flex-start;
+    /* Align form at the top */
+    position: relative;
+    padding-top: 54px;
+
+    /* Move form section 15% up */
+}
+
+/* Image Section */
+.photo-section img {
+    max-width: 80%;
+    /* Resizing the image to 80% of its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    /* Optional: Add space at the bottom of the image */
+}
+
+/* Text Section */
+.text-section {
+    display: flex;
+    justify-content: center;
+    /* Center form horizontally */
+    align-items: flex-start;
+    /* Align form at the top */
+    position: relative;
+    bottom: -20%;
+}
+
+/* Text Section Content */
+.text-section .text {
+    font-size: 16px;
+    line-height: 1.6;
+    /* Spacing between lines */
+    color: #301934;
+}
+
+.text-section h2 {
+    font-size: 44.5px;
+    margin-bottom: 10px;
+    color: #301934;
+}
+
+.text-section .para {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #301934;
+    /* Extra spacing between paragraphs */
+}
+
+.list-book {
+    margin-top: 20px;
+    color: #301934;
+    padding-left: 18px;
+    /* Space above the list */
+}
+
+.list-book li span {
+    color: #301934;
+    margin-right: 5px;
+    /* Space between icon and text */
+    font-size: 16px;
+    /* Font size for list text */
+    color: #301934;
+    /* List item text color */
+}
+
+
+/* Specific styling for the photo section */
+.photo {
+    width: 100%;
+    /* Full width of the section */
+    height: 100%;
+    /* Full height of the section */
+    overflow: hidden;
+    /* Hide overflow */
+    display: flex;
+    /* Flexbox for image alignment */
+    justify-content: center;
+    /* Center image horizontally */
+    align-items: center;
+    /* Center image vertically */
+}
+
+.photo img {
+    width: 100%;
+    /* Stretch image to full width */
+    height: 100%;
+    /* Stretch image to full height */
+    object-fit: cover;
+    /* Cover the entire section while maintaining aspect ratio */
+}
+
+/* Form Section */
+.form-section {
+    display: flex;
+    justify-content: center;
+    /* Center form horizontally */
+    align-items: flex-start;
+    /* Align form at the top */
+    position: relative;
+    top: -11%;
+    /* Move form section 15% up */
+}
+
+/* Form Container */
+.form-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #bdb5db;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Header Section */
+.form-header {
+    text-align: center;
+    /* Center text in header */
+    padding: 20px 0;
+    /* Padding for header */
+    background-color: #bdb5db;
+    /* Header background color */
+    color: #fff;
+    /* Text color */
+    border-radius: 8px 8px 0 0;
+    /* Rounded top corners */
+}
+
+.logo1 {
+    width: 200px;
+    /* Logo width */
+}
+
+/* Paragraph Update for Two Lines */
+.form-header p {
+    font-size: 14px;
+    /* Font size for paragraph */
+    max-width: 500px;
+    /* Max width for paragraph */
+    margin: 0 auto;
+    /* Center paragraph */
+    line-height: 1.4;
+    /* Line height for readability */
+}
+
+h2 {
+    font-size: 24px;
+    /* Font size for heading */
+    margin-bottom: 10px;
+    /* Bottom margin for heading */
+}
+
+/* Form Styling */
+.travel-form {
+    display: grid;
+    /* Use grid for form layout */
+    grid-template-columns: 1fr 1fr;
+    /* Two columns */
+    gap: 20px;
+    /* Gap between columns */
+}
+
+.form-group {
+    display: flex;
+    /* Flexbox for group layout */
+    flex-direction: column;
+    /* Stack label and input vertically */
+    margin-bottom: 15px;
+    /* Bottom margin */
+}
+
+label {
+    font-size: 14px;
+    /* Font size for labels */
+    margin-bottom: 5px;
+    /* Bottom margin for labels */
+}
+
+input,
+select {
+    padding: 10px;
+    /* Padding for inputs and selects */
+    font-size: 14px;
+    /* Font size for inputs and selects */
+    border: 1px solid #ccc;
+    /* Border for inputs and selects */
+    border-radius: 4px;
+    /* Rounded corners */
+}
+
+input[type="date"] {
+    padding: 8px;
+    /* Padding for date input */
+}
+
+/* Lowered Title and First Name */
+.form-group.lowered {
+    margin-top: 20px;
+    /* Adjusts spacing for lower placement */
+}
+
+/* Styling for buttons */
+.btn {
+    background-color: #007bff;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    /* No border */
+    padding: 10px 20px;
+    /* Padding for button */
+    border-radius: 5px;
+    /* Rounded button corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .travel-form {
+        grid-template-columns: 1fr;
+        /* Single column on small screens */
+    }
+
+    .logo1 {
+        width: 80px;
+        /* Smaller logo on small screens */
+    }
+
+    /* Optional: Adjust the section sizes for smaller screens */
+    .photo-section,
+    .text-section,
+    .form-section {
+        width: 100%;
+        /* Full width on smaller screens */
+        height: auto;
+        /* Auto height to maintain content */
+    }
+}
+
+/* Second Page End  */
+/* Styling the heading */
+.heading {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 30px;
+    color: #333;
+    width: 100%;
+}
+
+/* Section containing the heading and cards */
+.third-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    left: 6%;
+}
+
+/* Flexbox container for cards in a single row */
+.card-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Ensure no wrapping */
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    /* Enable horizontal scrolling if needed */
+    padding-bottom: 20px;
+}
+
+/* Hide the scrollbar */
+.card-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.card-wrapper {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Card styling */
+.card {
+    min-width: 280px;
+    height: 360px;
+    padding: 2rem 1rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translate(20px);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .info {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translate(30px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.card .info h1 {
+    margin: 0;
+}
+
+.card .info p {
+    letter-spacing: 1px;
+    font-size: xx-small;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.card .info .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.card .info .btn:hover {
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .card {
+        min-width: 240px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        min-width: 200px;
+        padding: 1rem;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .card .info h1 {
+        font-size: 1rem;
+    }
+
+    .card .info p {
+        font-size: 0.7rem;
+    }
+
+    .card .info .btn {
+        font-size: 12px;
+    }
+}
+
+/* Third page End */
+
+
+
+/* four page Start */
+.banner {
+    background: linear-gradient(var(--black-bg), var(--black-bg)), url(assets/four.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+    height: 80vh;
+    /* Full height */
+    width: 100%;
+    overflow: hidden;
+
+}
+
+
+.banner .bannercontent span {
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+.bannercontent h3 {
+    font-size: 4rem;
+    color: black;
+    margin-top: 1rem;
+}
+
+.bannercontent p {
+    max-width: 60rem;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+    color: black;
+    line-height: 2;
+}
+
+/* four page End */
+
+/*fifth page Start */
+
+
+/* fifthpage End */
+
+/* Sixth page Start */
+.card1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 288px;
+    height: 288px;
+    background-color: #774480;
+    color: black;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.card2 .icon {
+    position: absolute;
+    left: 20px;
+    font-size: 24px;
+}
+
+.card2 .text {
+    color: black;
+    font-size: 18px;
+}
+
+.card2:hover {
+    background-color: #bdb5d5;
+    color: black;
+    transform: scale(1.05);
+    animation: uniqueHover 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes uniqueHover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Sixth page End */
