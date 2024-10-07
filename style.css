@@ -13,6 +13,7 @@
     --SecColour: #e6e6fa;
     --HoverColour: #da70d6;
     --Hover1Colour: #db7cd8;
+    --black-bg: #bdb5d5b7;
 }
 
 body {
@@ -613,5 +614,391 @@ input[type="date"] {
 
 
 
-/* Second Page End *
-/
+/* Second Page End */
+
+/* Third page Strat */
+.heading {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 30px;
+    color: #333;
+    width: 100%;
+}
+
+/* Section containing the heading and cards */
+.third-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    left: 6%;
+    background-image: url('assets/SeocndPAGEb.png');
+    /* Set your background image path here */
+    background-size: cover;
+    /* Ensure the background image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+}
+
+/* Flexbox container for cards in a single row */
+.card-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Ensure no wrapping */
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    /* Enable horizontal scrolling if needed */
+    padding-bottom: 20px;
+}
+
+/* Hide the scrollbar */
+.card-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.card-wrapper {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Card styling */
+.card {
+    min-width: 280px;
+    height: 360px;
+    padding: 2rem 1rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translate(20px);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .info {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translate(30px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.card .info h1 {
+    margin: 0;
+}
+
+.card .info p {
+    letter-spacing: 1px;
+    font-size: xx-small;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.card .info .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.card .info .btn:hover {
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .card {
+        min-width: 240px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        min-width: 200px;
+        padding: 1rem;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .card .info h1 {
+        font-size: 1rem;
+    }
+
+    .card .info p {
+        font-size: 0.7rem;
+    }
+
+    .card .info .btn {
+        font-size: 12px;
+    }
+}
+
+/* Third page End */
+
+
+/* four page Start */
+.banner {
+    background: linear-gradient(var(--black-bg), var(--black-bg)), url(assets/four.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+    height: 50vh;
+    /* Full height */
+    width: 100%;
+    overflow: hidden;
+
+}
+
+
+.banner .bannercontent span {
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+.bannercontent h3 {
+    font-size: 4rem;
+    color: black;
+    margin-top: 1rem;
+}
+
+.bannercontent p {
+    max-width: 60rem;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+    color: black;
+    line-height: 2;
+}
+
+/* four page End */
+
+/*fifth page Start */
+.scrollContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cardsWrapper {
+    overflow: hidden;
+    width: 89%;
+    margin: 21px 0;
+}
+
+
+.cardsRow {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.cardFive {
+    width: 249px;
+    /* Adjust the width of each card */
+    height: 522px;
+    margin: 0 10px;
+    /* Adjust margin as needed */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.cardContent {
+    z-index: 1;
+    position: relative;
+    color: black;
+    background-color: wheat;
+}
+
+
+.scroll-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.scroll-btn:hover {
+    background-color: #555;
+}
+
+/* Example background images for cards */
+.cardFive:nth-child(1) {
+    background-image: url('assets/months/jan.webp');
+}
+
+.cardFive:nth-child(2) {
+    background-image: url('assets/months/Feb.jpeg');
+}
+
+.cardFive:nth-child(3) {
+    background-image: url('assets/months/cherry_blossom_hachioji_tokyo_japan.webp');
+}
+
+.cardFive:nth-child(4) {
+    background-image: url('assets/months/April.jpeg');
+}
+
+.cardFive:nth-child(5) {
+    background-image: url('assets/months/May.webp');
+}
+
+.cardFive:nth-child(6) {
+    background-image: url('assets/months/june.webp');
+}
+
+.cardFive:nth-child(7) {
+    background-image: url('assets/months/July.webp');
+}
+
+.cardFive:nth-child(8) {
+    background-image: url('assets/months/August.jpeg');
+}
+
+.cardFive:nth-child(9) {
+    background-image: url('assets/months/September.jpeg');
+}
+
+.cardFive:nth-child(10) {
+    background-image: url('assets/months/oyama-rice-terraces-GettyImages-459763841.webp');
+}
+
+.cardFive:nth-child(11) {
+    background-image: url('assets/months/November.jpeg');
+}
+
+.cardFive:nth-child(12) {
+    background-image: url('assets/months/December.jpg');
+}
+
+/* fifthpage End */
+
+/* Sixth page Start */
+.card1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 288px;
+    height: 288px;
+    background-color: #774480;
+    color: black;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.card2 .icon {
+    position: absolute;
+    left: 20px;
+    font-size: 24px;
+}
+
+.card2 .text {
+    color: black;
+    font-size: 18px;
+}
+
+.card2:hover {
+    background-color: #bdb5d5;
+    color: black;
+    transform: scale(1.05);
+    animation: uniqueHover 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes uniqueHover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Sixth page End */
