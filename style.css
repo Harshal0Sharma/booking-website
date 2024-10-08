@@ -1031,3 +1031,142 @@ input[type="date"] {
 }
 
 /* Sixth page End */
+
+/* Seven Page Start*/
+.mapPage {
+    background-image: url('assets/SeocndPAGEb.png');
+    /* Set your background image path here */
+    background-size: cover;
+    /* Ensure the background image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+}
+
+.headingMap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 44px;
+    font-family: var(--textM);
+    margin-bottom: 30px;
+    color: #333;
+    width: 100%;
+}
+
+.parent-container {
+    /* Replace with your actual parent class */
+    display: flex;
+    justify-content: center;
+    /* Centers content horizontally */
+    align-items: flex-start;
+    /* Adjust as needed */
+    height: 100vh;
+    /* Adjust height if needed */
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    max-width: 1200px;
+    margin: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url('assets/mapp.png');
+    /* Set your background image path here */
+    background-size: cover;
+    /* Ensure the background image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+}
+
+/* Left side: region images and description */
+.region-info {
+    width: 50%;
+    padding: 20px;
+}
+
+.region-info h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.region-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.region-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.region-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for the 4 images */
+    gap: 10px;
+    /* Space between the images */
+}
+
+.region-gallery img {
+    width: 100%;
+    /* Makes the image responsive to the container */
+    height: 150px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Ensures the image covers the area without distorting aspect ratio */
+    border-radius: 5px;
+    /* Optional: Add some rounding to the corners */
+}
+
+/* Right side: map container */
+.map-container {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.map-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.region {
+    cursor: pointer;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.region {
+    fill: #bdb5d5;
+    /* Default light gray color */
+    transition: fill 0.3s ease;
+    stroke: #301934;
+    /* Change the stroke color on hover */
+
+    /* Smooth transition for color change */
+}
+
+.region text {
+    fill: #2c3e50;
+    /* Text color */
+}
+
+.region:hover {
+    fill: #f90909;
+    stroke: none;
+}
+
+.region.selected {
+    fill: red;
+    stroke: none;
+    /* Change color for the selected region (blue) */
+}
+
+/* Seven PAge End */

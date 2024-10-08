@@ -971,72 +971,41 @@ input[type="date"] {
 .card1 {
     display: flex;
     justify-content: space-between;
-    /* Adjusts space between cards */
-    width: 100%;
-    /* Set to 100% width */
-    flex-wrap: nowrap;
-    /* Ensure cards stay in one row */
 }
 
 .card2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(20% - 2px);
-    /* Adjust width to allow for a small 2px gap */
+    width: 100%;
     height: 275px;
-    /* Adjust height as needed */
     background-color: #774480;
     color: black;
     text-align: center;
+    transition: all 0.3s ease;
     position: relative;
     cursor: pointer;
-    overflow: hidden;
-    /* To hide the pseudo-element overflow */
-    margin: 0 1px;
-    /* 1px margin for a thin gap */
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.card2::before {
-    content: "";
+.card2 .icon {
     position: absolute;
-    top: 0;
-    left: -100%;
-    /* Start from outside the left */
-    height: 100%;
-    width: 100%;
-    background-color: #bdb5d5;
-    /* Color for the hover effect */
-    transition: left 0.4s ease;
-    /* Transition for moving the pseudo-element */
-    z-index: 0;
-    /* Set behind the content */
-}
-
-.card2:hover::before {
-    left: 0;
-    /* Move to cover the card when hovered */
-}
-
-.card2 .icon,
-.card2 .text {
-    position: relative;
-    /* Position relative for stacking order */
-    z-index: 1;
-    /* Bring text and icon above the pseudo-element */
+    left: 20px;
+    font-size: 24px;
 }
 
 .card2 .text {
     color: black;
-    /* Text color */
     font-size: 18px;
-    /* Adjust font size */
 }
 
-/* Remove the scale effect on hover */
+.card2:hover {
+    background-color: #bdb5d5;
+    color: black;
+    transform: scale(1.05);
+    animation: uniqueHover 0.6s ease;
+}
 
-
-/* Optional: Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1047,75 +1016,157 @@ input[type="date"] {
     }
 }
 
-.card2 {
-    animation: fadeIn 0.5s ease-in-out;
-    /* Fade-in effect */
-}
+@keyframes uniqueHover {
+    0% {
+        transform: scale(1);
+    }
 
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
 
 /* Sixth page End */
 
-/* seven page start */
-.mapSection {
-
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+/* Seven Page Start*/
+.mapPage {
+    background-image: url('assets/SeocndPAGEb.png');
+    /* Set your background image path here */
+    background-size: cover;
+    /* Ensure the background image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
 }
 
-.containerMap {
+.headingMap {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 44px;
+    font-family: var(--textM);
+    margin-bottom: 30px;
+    color: #333;
     width: 100%;
 }
 
+.parent-container {
+    /* Replace with your actual parent class */
+    display: flex;
+    justify-content: center;
+    /* Centers content horizontally */
+    align-items: flex-start;
+    /* Adjust as needed */
+    height: 100vh;
+    /* Adjust height if needed */
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    max-width: 1200px;
+    margin: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url('assets/mapp.png');
+    /* Set your background image path here */
+    background-size: cover;
+    /* Ensure the background image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+}
+
+/* Left side: region images and description */
 .region-info {
-    width: 30%;
+    width: 50%;
     padding: 20px;
-    border-right: 1px solid #ccc;
 }
 
+.region-info h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.region-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.region-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.region-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for the 4 images */
+    gap: 10px;
+    /* Space between the images */
+}
+
+.region-gallery img {
+    width: 100%;
+    /* Makes the image responsive to the container */
+    height: 150px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Ensures the image covers the area without distorting aspect ratio */
+    border-radius: 5px;
+    /* Optional: Add some rounding to the corners */
+}
+
+/* Right side: map container */
 .map-container {
-    width: 60%;
+    width: 50%;
+    padding: 20px;
     position: relative;
 }
 
-#map {
-    position: relative;
-    width: 100%;
+.map-container svg {
+    max-width: 100%;
+    height: auto;
 }
 
-svg {
-    width: "437.33432";
-    height: "516.01587";
-}
-
-.region-labels {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.region-label {
-    margin: 0 10px;
+.region {
     cursor: pointer;
-    font-weight: bold;
+    transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
-.region-image {
-    width: 45%;
-    margin: 5px;
-}
-
-.region path {
+.region {
+    fill: #bdb5d5;
+    /* Default light gray color */
     transition: fill 0.3s ease;
+    stroke: #301934;
+    /* Change the stroke color on hover */
+
+    /* Smooth transition for color change */
 }
 
-.region:hover path {
-    cursor: pointer;
-    fill: #f80303;
-    /* Change the hover color */
+.region text {
+    fill: #2c3e50;
+    /* Text color */
 }
 
-/* seven page End */
+.region:hover {
+    fill: #f90909;
+    stroke: none;
+}
+
+.region.selected {
+    fill: red;
+    stroke: none;
+    /* Change color for the selected region (blue) */
+}
+
+/* Seven PAge End */
