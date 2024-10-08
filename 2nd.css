@@ -1056,45 +1056,66 @@ input[type="date"] {
 /* Sixth page End */
 
 /* seven page start */
+.mapSection {
 
-.map {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    width: 100vh;
 }
 
-#leftContentMap {
-    width: 45%;
-    padding: 20px;
-    height: 50%;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-}
-
-#rightContentMap {
-    width: 45%;
-}
-
-svg,
-path {
-    cursor: pointer;
-}
-
-path {
-    fill: #ccc;
-    stroke: 1px black;
-    transition: fill 0.3s ease;
-    /* Smooth transition */
-}
-
-path.hovered {
-    fill: rgb(255, 0, 0);
-}
-
-#leftContentMap img {
+.containerMap {
+    display: flex;
     width: 100%;
-    height: auto;
+}
+
+.region-info {
+    width: 30%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.map-container {
+    width: 60%;
+    position: relative;
+}
+
+#map {
+    position: relative;
+    width: 100%;
+}
+
+svg {
+    width: "437.33432";
+    height: "516.01587";
+}
+
+.region-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.region-label {
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.region-image {
+    width: 45%;
+    margin: 5px;
+}
+
+.region path {
+    transition: fill 0.3s ease;
+}
+
+.region:hover path {
+    cursor: pointer;
+    fill: #f80303;
+    /* Change the hover color */
 }
 
 /* seven page End */
