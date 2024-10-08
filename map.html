@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="map.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img id="countryImage" src="assets/1.jpg" alt="Country Image">
+        </div>
+        <div class="right-panel">
+            <svg id="countryMap" viewBox="0 0 100 100">
+                <!-- Replace with your actual map SVG path -->
+                <path class="city" id="city1" d="M20,30 L40,30 L40,50 L20,50 Z" data-city-name="City 1"
+                    data-image="assets/2.jpg"></path>
+                <path class="city" id="city2" d="M50,30 L70,30 L70,50 L50,50 Z" data-city-name="City 2"
+                    data-image="assets/3.jpg"></path>
+                <!-- Add more cities as needed -->
+            </svg>
+        </div>
+    </div>
+    <script src="map.js"></script>
+</body>
+
+</html>

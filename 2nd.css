@@ -1054,3 +1054,47 @@ input[type="date"] {
 
 
 /* Sixth page End */
+
+/* seven page start */
+
+.map {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100vh;
+}
+
+#leftContentMap {
+    width: 45%;
+    padding: 20px;
+    height: 50%;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+#rightContentMap {
+    width: 45%;
+}
+
+svg,
+path {
+    cursor: pointer;
+}
+
+path {
+    fill: #ccc;
+    stroke: 1px black;
+    transition: fill 0.3s ease;
+    /* Smooth transition */
+}
+
+path.hovered {
+    fill: rgb(255, 0, 0);
+}
+
+#leftContentMap img {
+    width: 100%;
+    height: auto;
+}
+
+/* seven page End */
