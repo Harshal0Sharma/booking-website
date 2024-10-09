@@ -228,3 +228,42 @@ window.addEventListener("load", function () {
 });
 
 // sevene page start
+
+// Footer Start
+const footer = document.querySelector(".footer");
+
+// Create cherry blossoms
+for (let i = 0; i < 50; i++) {
+  const blossom = document.createElement("div");
+  blossom.className = "blossom";
+  blossom.style.width = `${Math.random() * 10 + 5}px`;
+  blossom.style.height = blossom.style.width;
+  blossom.style.top = `${Math.random() * 100}vh`;
+  blossom.style.left = `${Math.random() * 100}vw`;
+  blossom.style.animationDuration = `${Math.random() * 3 + 2}s`;
+  blossom.style.animationDelay = `${Math.random() * 5}s`;
+  footer.appendChild(blossom);
+}
+
+// Create leaves
+for (let i = 0; i < 30; i++) {
+  const leaf = document.createElement("div");
+  leaf.className = "leaf";
+  leaf.style.width = `${Math.random() * 15 + 5}px`; // Random size for leaves
+  leaf.style.height = `${Math.random() * 10 + 5}px`;
+  leaf.style.top = `${Math.random() * 100}vh`;
+  leaf.style.left = `${Math.random() * 100}vw`;
+  leaf.style.animationDuration = `${Math.random() * 3 + 2}s`;
+  leaf.style.animationDelay = `${Math.random() * 5}s`;
+  footer.appendChild(leaf);
+}
+
+// Create trees
+for (let i = 0; i < 5; i++) {
+  const tree = document.createElement("div");
+  tree.className = "tree";
+  tree.style.left = `${Math.random() * 100}vw`;
+  tree.style.bottom = `${Math.random() * 20}vh`;
+  footer.appendChild(tree);
+}
+// Footer End

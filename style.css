@@ -1090,7 +1090,6 @@ input[type="date"] {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
     max-width: 1200px;
     margin: 20px;
     width: 100%;
@@ -1191,3 +1190,442 @@ input[type="date"] {
 }
 
 /* Seven PAge End */
+
+/* Eight  PAge Start */
+
+.content-wrapper {
+    background: url(assets/queryImage.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+    height: 90vh;
+    /* Full height */
+    width: 100%;
+    overflow: hidden;
+}
+
+.query {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    /* Make it full-screen height */
+    position: relative;
+    bottom: 5%;
+}
+
+/* Optional: Overlay to darken the background */
+.content-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Transparent dark overlay */
+    z-index: 0;
+    /* Ensure it is behind the content */
+}
+
+/* About Section */
+.about-section {
+    color: white;
+    width: 60%;
+    /* Takes 60% of the width */
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    z-index: 1;
+    /* Make sure content is on top of the overlay */
+}
+
+.about-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats div {
+    font-size: 18px;
+}
+
+.inquiry-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.form-box {
+    background-color: #bdb5d5;
+    /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* Shadow for the boxed form */
+    max-width: 600px;
+    /* Adjusted max-width */
+    width: 100%;
+    /* Make the form take the full width of its container */
+    transform: translateX(-5%);
+    /* Shift the form 5% to the left */
+    margin-top: 30px;
+    /* Add margin to create space above the form box */
+}
+
+.form-row {
+    display: flex;
+    /* Use flexbox for columns */
+    gap: 20px;
+    /* Space between columns */
+}
+
+.form-column {
+    flex: 1;
+    /* Each column takes equal space */
+}
+
+h2 {
+    margin-bottom: 20px;
+    /* Space between heading and form */
+    text-align: center;
+    /* Center the heading */
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    /* Make inputs full width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    /* Space between inputs */
+}
+
+button {
+    background-color: #a39378;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #8c7a65;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .about-section,
+    .inquiry-section {
+        width: 100%;
+    }
+
+    .about-section {
+        height: 300px;
+    }
+}
+
+/* Eight  PAge End */
+
+/* Nine  PAge Start */
+
+.NinePage {
+    background-image: url('assets/ninepage.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    /* Makes the background cover the entire viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.testimonial-section {
+    background-color: rgba(242, 190, 239, 0.9);
+    /* Light, semi-transparent background to make text readable */
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: #a438a7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.quote-icon {
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+.author {
+    font-weight: bold;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Nine  PAge End */
+
+
+/* Footer Start */
+/* Footer Styling */
+.footer {
+    position: relative;
+    background-color: #301934;
+    /* Dark purple background */
+    color: #bdb5d5;
+    /* Light lavender text */
+    padding: 100px 0 40px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* About, Links, Contact sections */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    color: #bdb5d5;
+    /* Header color using provided code */
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.footer-section a {
+    color: #bdb5d5;
+    /* Link color */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #ff6b6b;
+    /* Change link color on hover */
+    text-decoration: underline;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Social Icons */
+.footer .social-icons a {
+    color: #bdb5d5;
+    /* Social icon color */
+    margin-right: 15px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #ff6b6b;
+    /* Social icon hover color */
+    transform: scale(1.2);
+}
+
+/* SVG Wave Animation */
+.wave-container {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax>use {
+    animation: moveWaves 10s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+@keyframes moveWaves {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #bdb5d5;
+    /* Footer text color */
+}
+
+/* Cherry Blossom Effect */
+.blossom {
+    position: absolute;
+    background-color: #bdb5d5;
+    /* Cherry blossom color */
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: bloom 4s infinite ease-in-out;
+    /* Bloom animation */
+}
+
+@keyframes bloom {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Leaf Effect */
+.leaf {
+    position: absolute;
+    background-color: #bdbdbd;
+    /* Leaf color */
+    border-radius: 5px;
+    /* Leaf shape */
+    opacity: 0.8;
+    animation: sway 3s infinite ease-in-out;
+    /* Sway animation */
+}
+
+@keyframes sway {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+}
+
+/* Tree Effect */
+.tree {
+    position: absolute;
+    background-color: #bdb5d5;
+    /* Tree trunk color */
+    width: 20px;
+    height: 60px;
+    /* Tree height */
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 40px;
+    }
+}
+
+/* Footer Start */
