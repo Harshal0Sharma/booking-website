@@ -971,41 +971,71 @@ input[type="date"] {
 .card1 {
     display: flex;
     justify-content: space-between;
+    /* Adjusts space between cards */
+    width: 100%;
+    /* Set to 100% width */
+    flex-wrap: nowrap;
+    /* Ensure cards stay in one row */
 }
 
 .card2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: calc(20% - 2px);
+    /* Adjust width to allow for a small 2px gap */
     height: 275px;
+    /* Adjust height as needed */
     background-color: #774480;
     color: black;
     text-align: center;
-    transition: all 0.3s ease;
     position: relative;
     cursor: pointer;
-    animation: fadeIn 0.5s ease-in-out;
+    overflow: hidden;
+    /* To hide the pseudo-element overflow */
+    margin: 0 1px;
+    /* 1px margin for a thin gap */
 }
 
-.card2 .icon {
+.card2::before {
+    content: "";
     position: absolute;
-    left: 20px;
-    font-size: 24px;
+    top: 0;
+    left: -100%;
+    /* Start from outside the left */
+    height: 100%;
+    width: 100%;
+    background-color: #bdb5d5;
+    /* Color for the hover effect */
+    transition: left 0.4s ease;
+    /* Transition for moving the pseudo-element */
+    z-index: 0;
+    /* Set behind the content */
+}
+
+.card2:hover::before {
+    left: 0;
+    /* Move to cover the card when hovered */
+}
+
+.card2 .icon,
+.card2 .text {
+    position: relative;
+    /* Position relative for stacking order */
+    z-index: 1;
+    /* Bring text and icon above the pseudo-element */
 }
 
 .card2 .text {
     color: black;
+    /* Text color */
     font-size: 18px;
+    /* Adjust font size */
 }
 
-.card2:hover {
-    background-color: #bdb5d5;
-    color: black;
-    transform: scale(1.05);
-    animation: uniqueHover 0.6s ease;
-}
+/* Remove the scale effect on hover */
 
+/* Optional: Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1016,18 +1046,9 @@ input[type="date"] {
     }
 }
 
-@keyframes uniqueHover {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1.05);
-    }
+.card2 {
+    animation: fadeIn 0.5s ease-in-out;
+    /* Fade-in effect */
 }
 
 /* Sixth page End */
