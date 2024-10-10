@@ -85,40 +85,63 @@ body {
     width: 100%;
 }
 
-.btn {
-    padding: 15px 25px;
-    background-color: #f7f6fa;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: all 0.3s ease;
+/* btn start*/
+.btnWaves {
+    width: 150px;
+    background: white;
+    border: 0.8mm solid var(--HeadingColour);
+    border-radius: 5mm;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.textbtn {
+    font-size: 15px;
     font-weight: bold;
+    font-family: poppins;
+    z-index: 1;
+    color: black;
+    position: relative;
 }
 
-.btn::before {
-    content: '';
+.wavebtn {
     position: absolute;
-    top: 0;
-    left: -100%;
     width: 100%;
-    height: 100%;
-    background-color: white;
-    opacity: 0.2;
-    transition: all 0.3s ease;
+    height: 50%;
+    background: url(assets/wave.svg);
+    background-size: 200% 100%;
+    top: 100%;
+    left: 0;
+    animation: wave 2s linear infinite;
+    transition: 0.5s;
 }
 
-.btn:hover::before {
-    left: 100%;
+@keyframes wave {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: 200%;
+    }
 }
 
-.btn:hover {
+button:hover .wavebtn {
+    top: 50%;
+
+}
+
+button:hover {
+    box-shadow: 3px -3px 3px var(--HeadingColour);
     background-color: var(--PriColour);
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+
 }
+
+/* btn end */
 
 /* Mobile Menu Icon */
 #menu-btn {
@@ -255,20 +278,6 @@ body {
     margin-bottom: 20px;
     line-height: 1.3;
     color: #301934;
-}
-
-.text-overlay button {
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: none;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.text-overlay button:hover {
-    background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Video Thumbnails */
@@ -568,27 +577,6 @@ input[type="date"] {
 .form-group.lowered {
     margin-top: 20px;
     /* Adjusts spacing for lower placement */
-}
-
-/* Styling for buttons */
-.btn {
-    background-color: #007bff;
-    /* Button background color */
-    color: #fff;
-    /* Button text color */
-    border: none;
-    /* No border */
-    padding: 10px 20px;
-    /* Padding for button */
-    border-radius: 5px;
-    /* Rounded button corners */
-    cursor: pointer;
-    /* Pointer cursor on hover */
-}
-
-.btn:hover {
-    background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
 /* Responsive Design */
@@ -1328,19 +1316,7 @@ textarea {
     /* Space between inputs */
 }
 
-button {
-    background-color: #a39378;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
 
-button:hover {
-    background-color: #8c7a65;
-}
 
 
 
